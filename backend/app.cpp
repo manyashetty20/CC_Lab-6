@@ -17,7 +17,7 @@ int main() {
     }
     
     int opt = 1;
-    setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+    setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt));
     
     // Bind to port 8080
     struct sockaddr_in address;
